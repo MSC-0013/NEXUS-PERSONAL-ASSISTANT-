@@ -1,27 +1,27 @@
 {
-  "timestamp": "2026-10-23T14:42:34.997Z",
+  "timestamp": "2026-10-23T14:44:29.413Z",
   "phase": "Phase 9 — Complete End-to-End Voice Loop",
   "binary": "C:\\MSC\\my-desk\\ai-personal-assistants\\apps\\desktop-companion\\bin\\NexusDesktopCompanion.exe",
   "totalTests": 7,
-  "passedTests": 5,
-  "allPassed": false,
+  "passedTests": 7,
+  "allPassed": true,
   "results": [
     {
       "test": "E2E_HOTKEY_TO_SPOKEN_RESPONSE",
-      "passed": false,
+      "passed": true,
       "detail": {
         "hotkeyOrbState": "LISTENING",
-        "responseContent": "The current time in UTC is 2026-10-23 14:42:18 (UTC). UTC time is 2026-10-23 14:42:18 (UTC). The difference between UTC and Asia/Kolkata is exactly 5 hours and 30 minutes (+05:30).",
+        "responseContent": "The current time in UTC is 2026-10-23 14:44:12 (UTC). UTC time is 2026-10-23 14:44:12 (UTC). The difference between UTC and Asia/Kolkata is exactly 5 hours and 30 minutes (+05:30).",
         "duringSpeechOrb": "SPEAKING",
         "duringSpeechTts": true,
-        "finalOrbState": "SPEAKING"
+        "finalOrbState": "IDLE"
       }
     },
     {
       "test": "E2E_WAKE_PHRASE_CALCULATION",
-      "passed": false,
+      "passed": true,
       "detail": {
-        "wakeTriggered": false,
+        "wakeTriggered": true,
         "responseContent": "25 times 40 equals 1,000.",
         "finalOrbState": "IDLE"
       }
