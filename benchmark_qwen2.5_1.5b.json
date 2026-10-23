@@ -1,0 +1,123 @@
+{
+  "model": "qwen2.5:1.5b",
+  "cold": {
+    "is_cold": true,
+    "total_latency_ms": 29998.8,
+    "ttft_ms": 22654.18,
+    "eval_count": 128,
+    "eval_duration_ms": 959.58,
+    "server_tokens_per_sec": 133.39,
+    "client_tokens_per_sec": 17.29,
+    "prompt_eval_count": 48,
+    "prompt_eval_duration_ms": 254.05,
+    "load_duration_ms": 22364.0,
+    "peak_vram_mb": 1467.0,
+    "min_free_vram_mb": 4454.0,
+    "peak_temp_c": 56.0,
+    "avail_sys_ram_gb": 3.26,
+    "response_sample": "In computer programming, synchronization refers to the process of ensuring that multiple threads or processes execute th"
+  },
+  "warm_runs": [
+    {
+      "is_cold": false,
+      "total_latency_ms": 8386.9,
+      "ttft_ms": 350.97,
+      "eval_count": 128,
+      "eval_duration_ms": 1082.88,
+      "server_tokens_per_sec": 118.2,
+      "client_tokens_per_sec": 15.8,
+      "prompt_eval_count": 48,
+      "prompt_eval_duration_ms": 168.63,
+      "load_duration_ms": 176.58,
+      "peak_vram_mb": 1467.0,
+      "min_free_vram_mb": 4454.0,
+      "peak_temp_c": 57.0,
+      "avail_sys_ram_gb": 3.26,
+      "response_sample": "In computer programming, synchronous execution refers to the process where all tasks or operations must be completed bef"
+    },
+    {
+      "is_cold": false,
+      "total_latency_ms": 8420.43,
+      "ttft_ms": 394.71,
+      "eval_count": 128,
+      "eval_duration_ms": 1101.37,
+      "server_tokens_per_sec": 116.22,
+      "client_tokens_per_sec": 15.82,
+      "prompt_eval_count": 48,
+      "prompt_eval_duration_ms": 168.91,
+      "load_duration_ms": 219.11,
+      "peak_vram_mb": 1467.0,
+      "min_free_vram_mb": 4454.0,
+      "peak_temp_c": 57.0,
+      "avail_sys_ram_gb": 3.27,
+      "response_sample": "In computer programming, synchronous execution refers to the sequential order of instructions where each instruction wai"
+    },
+    {
+      "is_cold": false,
+      "total_latency_ms": 8450.74,
+      "ttft_ms": 328.83,
+      "eval_count": 128,
+      "eval_duration_ms": 1013.83,
+      "server_tokens_per_sec": 126.25,
+      "client_tokens_per_sec": 15.64,
+      "prompt_eval_count": 48,
+      "prompt_eval_duration_ms": 168.93,
+      "load_duration_ms": 154.08,
+      "peak_vram_mb": 1467.0,
+      "min_free_vram_mb": 4454.0,
+      "peak_temp_c": 57.0,
+      "avail_sys_ram_gb": 3.24,
+      "response_sample": "In computer programming, synchronization and asynchrony are two fundamental concepts that significantly impact how tasks"
+    },
+    {
+      "is_cold": false,
+      "total_latency_ms": 8503.04,
+      "ttft_ms": 352.86,
+      "eval_count": 128,
+      "eval_duration_ms": 1002.68,
+      "server_tokens_per_sec": 127.66,
+      "client_tokens_per_sec": 15.58,
+      "prompt_eval_count": 48,
+      "prompt_eval_duration_ms": 169.67,
+      "load_duration_ms": 177.46,
+      "peak_vram_mb": 1467.0,
+      "min_free_vram_mb": 4454.0,
+      "peak_temp_c": 58.0,
+      "avail_sys_ram_gb": 3.23,
+      "response_sample": "In computer programming, synchronization and asynchrony refer to different approaches for managing processes or threads "
+    },
+    {
+      "is_cold": false,
+      "total_latency_ms": 8185.48,
+      "ttft_ms": 388.23,
+      "eval_count": 128,
+      "eval_duration_ms": 946.85,
+      "server_tokens_per_sec": 135.18,
+      "client_tokens_per_sec": 16.29,
+      "prompt_eval_count": 48,
+      "prompt_eval_duration_ms": 168.46,
+      "load_duration_ms": 213.84,
+      "peak_vram_mb": 1467.0,
+      "min_free_vram_mb": 4454.0,
+      "peak_temp_c": 58.0,
+      "avail_sys_ram_gb": 3.36,
+      "response_sample": "In computer programming, synchronous execution refers to the sequential manner in which tasks are performed, where one t"
+    }
+  ],
+  "warm_summary": {
+    "ttft_ms": {
+      "min": 328.83,
+      "median": 352.86,
+      "max": 394.71
+    },
+    "throughput_tok_s": {
+      "min": 116.22,
+      "median": 126.25,
+      "max": 135.18
+    },
+    "peak_vram_mb": 1467.0,
+    "min_free_vram_mb": 4454.0,
+    "peak_temp_c": 58.0,
+    "avail_sys_ram_gb": 3.36
+  }
+}

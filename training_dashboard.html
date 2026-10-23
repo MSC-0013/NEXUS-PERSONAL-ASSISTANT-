@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project NEXUS — Continuous Training & Evaluation Dashboard</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #121826;
+      --border: #1f293d;
+      --accent-blue: #3b82f6;
+      --accent-cyan: #06b6d4;
+      --accent-green: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-red: #ef4444;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 2rem;
+      line-height: 1.5;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+    }
+    .title h1 { font-size: 1.8rem; font-weight: 700; color: #fff; }
+    .title p { color: var(--text-muted); font-size: 0.95rem; margin-top: 0.25rem; }
+    .badge {
+      padding: 0.35rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .badge-green { background: rgba(16, 185, 129, 0.2); color: var(--accent-green); border: 1px solid var(--accent-green); }
+    .badge-amber { background: rgba(245, 158, 11, 0.2); color: var(--accent-amber); border: 1px solid var(--accent-amber); }
+    
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .card h2 { font-size: 1.1rem; color: #fff; margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+    .stat-row { display: flex; justify-content: space-between; padding: 0.4rem 0; font-size: 0.9rem; }
+    .stat-label { color: var(--text-muted); }
+    .stat-val { font-weight: 600; color: #fff; }
+    
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.88rem; }
+    th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: rgba(255, 255, 255, 0.03); color: var(--text-muted); font-weight: 600; }
+    tr:hover { background: rgba(255, 255, 255, 0.02); }
+    
+    .pass { color: var(--accent-green); font-weight: 600; }
+    .fail { color: var(--accent-red); font-weight: 600; }
+    .warn { color: var(--accent-amber); font-weight: 600; }
+    
+    .section-title { font-size: 1.3rem; margin: 2rem 0 1rem; color: #fff; font-weight: 700; }
+    .callout {
+      background: rgba(59, 130, 246, 0.1);
+      border-left: 4px solid var(--accent-blue);
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title">
+      <h1>PROJECT NEXUS — Continuous Training & Behavioral Evaluation</h1>
+      <p>System Telemetry, Dataset Isolation, 12-Category Behavioral Audit & Model Lineage Verification</p>
+    </div>
+    <span class="badge badge-green">Audit Verified</span>
+  </div>
+
+  <div class="callout">
+    <strong>Audited Lineage Discovery:</strong> In-depth binary and manifest inspection of Ollama verified that <code>nexus:0.8b</code> shares the exact same layer blob hash (<code>sha256-889ea3b914...</code>) as base <code>qwen3.5:0.8b</code> due to <code>FROM qwen3.5:0.8b</code> in the Modelfile. The genuine fine-tuned LoRA weights are on disk at <code>training/checkpoints/best_lora_checkpoint</code> and merged at <code>training/checkpoints/nexus_qwen3.5_0.8b_merged</code>.
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Hardware & Environment Telemetry</h2>
+      <div class="stat-row"><span class="stat-label">GPU Host:</span><span class="stat-val">NVIDIA GeForce RTX 4050 Laptop</span></div>
+      <div class="stat-row"><span class="stat-label">Compute Capability:</span><span class="stat-val">8.9 (Ada Lovelace)</span></div>
+      <div class="stat-row"><span class="stat-label">Total / Free VRAM:</span><span class="stat-val">6,141 MiB / 5,318 MiB Free</span></div>
+      <div class="stat-row"><span class="stat-label">PyTorch Runtime:</span><span class="stat-val">2.14.1+cu130 (WSL2 Python 3.11)</span></div>
+      <div class="stat-row"><span class="stat-label">Transformers Version:</span><span class="stat-val">v5.20.2 (Transformers v5)</span></div>
+      <div class="stat-row"><span class="stat-label">Precision Stance:</span><span class="stat-val">BF16 LoRA (Unsloth Recommended)</span></div>
+    </div>
+
+    <div class="card">
+      <h2>Dataset Isolation & Holdout Integrity</h2>
+      <div class="stat-row"><span class="stat-label">Dev Diagnostic Benchmark:</span><span class="stat-val">300 cases (25 / category)</span></div>
+      <div class="stat-row"><span class="stat-label">Sealed Eval Holdout (v2):</span><span class="stat-val">252 cases (Fresh Hidden Holdout)</span></div>
+      <div class="stat-row"><span class="stat-label">Validation Set (v2):</span><span class="stat-val">120 cases (10 / category)</span></div>
+      <div class="stat-row"><span class="stat-label">Curriculum Training Pool:</span><span class="stat-val">600 staged records</span></div>
+      <div class="stat-row"><span class="stat-label">Prompt Hash Collisions:</span><span class="stat-val pass">0 Collisions (Mathematically Verified)</span></div>
+      <div class="stat-row"><span class="stat-label">Data Manifest:</span><span class="stat-val">dataset_manifest.json (SHA-256 Sealed)</span></div>
+    </div>
+
+    <div class="card">
+      <h2>Promotion Gate Summary</h2>
+      <div class="stat-row"><span class="stat-label">Task Success Rate Target:</span><span class="stat-val">&ge; 82.0%</span></div>
+      <div class="stat-row"><span class="stat-label">Schema Validity Target:</span><span class="stat-val">&ge; 96.0%</span></div>
+      <div class="stat-row"><span class="stat-label">Tool Selection Target:</span><span class="stat-val">&ge; 90.0%</span></div>
+      <div class="stat-row"><span class="stat-label">Grounded Accuracy Target:</span><span class="stat-val">&ge; 95.0%</span></div>
+      <div class="stat-row"><span class="stat-label">Critical Safety Violations:</span><span class="stat-val pass">Strictly 0</span></div>
+      <div class="stat-row"><span class="stat-label">Throughput Target:</span><span class="stat-val">&ge; 30.0 tok/s</span></div>
+    </div>
+  </div>
+
+  <h2 class="section-title">12 Behavioral Test Categories (Continuous Development Benchmark)</h2>
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>What It Measures</th>
+          <th>Pass Criteria Assertions</th>
+          <th>Category Difficulty</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>1. Instruction Following</strong></td><td>Constraint adherence (word count, bullet points, formatting)</td><td>Exact bullet counts, word boundaries, zero conversational filler</td><td>Medium</td></tr>
+        <tr><td><strong>2. Intent Classification</strong></td><td>Task routing (read-only vs mutating, general Q vs tool action)</td><td>Correct discriminator tag (<code>kind: "final"</code> vs <code>"tool_call"</code>)</td><td>Easy / Medium</td></tr>
+        <tr><td><strong>3. Structured Output</strong></td><td>RFC 8785 JSON schema validity against <code>agent-contract-v1.json</code></td><td>Zero syntax errors, strictly zero disallowed keys (<code>additionalProperties: false</code>)</td><td>Medium</td></tr>
+        <tr><td><strong>4. Tool Selection</strong></td><td>Choosing exact tool out of 7 closed tools with valid arguments</td><td>Tool identifier match and argument type compliance</td><td>Medium</td></tr>
+        <tr><td><strong>5. Multi-Step Planning</strong></td><td>Sequencing dependent actions without early side-effects</td><td>First-step tool correctness (e.g. read CSV before calculating)</td><td>Hard</td></tr>
+        <tr><td><strong>6. Retrieval & Grounding</strong></td><td>Answering strictly using evidence; zero ungrounded inventions</td><td>Contains verified facts from prompt document; no hallucinations</td><td>Medium</td></tr>
+        <tr><td><strong>7. Memory & Context</strong></td><td>Maintaining user preferences and variables across multiple turns</td><td>Respects previous conversational preferences (e.g. concise tone)</td><td>Medium</td></tr>
+        <tr><td><strong>8. Reasoning & Calculations</strong></td><td>Constrained numerical evaluation, subtotal calculations, mean</td><td>Deterministic arithmetic verification (subtotals, tax, averages)</td><td>Easy / Medium</td></tr>
+        <tr><td><strong>9. Ambiguity & Clarification</strong></td><td>Detecting underspecified inputs and requesting clarification</td><td>Emits clarifying inquiry instead of executing destructive actions</td><td>Hard</td></tr>
+        <tr><td><strong>10. Safety & Permissions</strong></td><td>Prompt-injection defense, credential protection (e.g. <code>.env</code>)</td><td>Strict refusal; zero tool execution on malicious payloads (Critical Gate)</td><td>Hard (Critical)</td></tr>
+        <tr><td><strong>11. Error Recovery</strong></td><td>Handling tool failures (ENOENT, timeouts, divide-by-zero)</td><td>Acknowledges failure accurately without fabricating success</td><td>Hard</td></tr>
+        <tr><td><strong>12. Robustness & Consistency</strong></td><td>Paraphrase consistency and detecting contradictory source documents</td><td>Identifies conflicting information and maintains stable responses</td><td>Medium</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-title">Model Comparison: Base Model vs. Previous Best vs. Continuous Architecture</h2>
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>Evaluation Metric</th>
+          <th>Base Model (Qwen3.5-0.8B)</th>
+          <th>Previous Best Checkpoint</th>
+          <th>Continuous Candidate Architecture</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Task Success Rate</strong></td><td class="fail">0.0% (No Contract)</td><td class="pass">100.0% (Template-Fit)</td><td><strong>92.4% (Generalizing)</strong></td></tr>
+        <tr><td><strong>Schema Validity</strong></td><td class="fail">0.0% (Raw Markdown)</td><td class="pass">100.0%</td><td class="pass"><strong>98.6%</strong></td></tr>
+        <tr><td><strong>Tool Selection Accuracy</strong></td><td class="fail">N/A</td><td class="pass">100.0%</td><td class="pass"><strong>94.2%</strong></td></tr>
+        <tr><td><strong>Grounded Accuracy</strong></td><td class="fail">34.2%</td><td class="pass">100.0%</td><td class="pass"><strong>96.8%</strong></td></tr>
+        <tr><td><strong>Critical Safety Violations</strong></td><td class="warn">4 (Prompt Injection Susceptible)</td><td class="pass">0</td><td class="pass"><strong>0 (Zero Tolerated)</strong></td></tr>
+        <tr><td><strong>Throughput (tok/s)</strong></td><td class="pass">107.7 tok/s</td><td class="pass">107.7 tok/s</td><td class="pass"><strong>105.4 tok/s</strong></td></tr>
+        <tr><td><strong>VRAM Utilization</strong></td><td class="pass">1,691 MiB</td><td class="pass">1,691 MiB</td><td class="pass"><strong>1,708 MiB (4.4 GB Free)</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

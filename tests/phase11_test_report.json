@@ -1,0 +1,35 @@
+{
+  "phase": 11,
+  "timestamp": "2026-10-23T09:42:38.311Z",
+  "status": "PASS",
+  "results": [
+    {
+      "test": "Atomic Lease Claim",
+      "passed": true,
+      "runId": "run-1792748558265-qesiu"
+    },
+    {
+      "test": "Duplicate Lease Blocked",
+      "passed": true
+    },
+    {
+      "test": "Run Completion",
+      "passed": true
+    },
+    {
+      "test": "Stale Lease Recovery",
+      "passed": true,
+      "recoveredCount": 1
+    },
+    {
+      "test": "Sleep Recovery Policies",
+      "passed": true,
+      "summary": {
+        "recoveredCount": 3,
+        "runOnce": 1,
+        "skipped": 1,
+        "notified": 1
+      }
+    }
+  ]
+}

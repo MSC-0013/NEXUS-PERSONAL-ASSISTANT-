@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-10-23T14:43:50.249Z",
+  "phase": "Phase 4 — Local Wake-Phrase Engine",
+  "binary": "C:\\MSC\\my-desk\\ai-personal-assistants\\apps\\desktop-companion\\bin\\NexusDesktopCompanion.exe",
+  "totalTests": 9,
+  "passedTests": 9,
+  "allPassed": true,
+  "results": [
+    {
+      "test": "WAKE_ENGINE_INITIALIZATION",
+      "passed": true,
+      "detail": {
+        "isEnabled": true,
+        "isListening": true,
+        "wakePhrase": "Hey NEXUS",
+        "sensitivity": 0.6,
+        "vadThreshold": 0.035,
+        "cooldownMs": 1500,
+        "isSelfTriggerSuppressed": false,
+        "lastTriggerAgeMs": -1
+      }
+    },
+    {
+      "test": "WAKE_PHRASE_DETECTION",
+      "passed": true,
+      "detail": {
+        "before": {
+          "status": "ok",
+          "service": "nexus-desktop-companion",
+          "sessionState": "UNLOCKED",
+          "isMuted": false,
+          "startupEnabled": false,
+          "hotkeyRegistered": true,
+          "activeHotkey": "Ctrl+Alt+N",
+          "displayState": "ON",
+          "orbVisible": false,
+          "orbState": "IDLE"
+        },
+        "wakeResponse": {
+          "triggered": true,
+          "phrase": "Hey NEXUS",
+          "confidence": 0.95,
+          "orbState": "LISTENING"
+        },
+        "after": {
+          "status": "ok",
+          "service": "nexus-desktop-companion",
+          "sessionState": "UNLOCKED",
+          "isMuted": false,
+          "startupEnabled": false,
+          "hotkeyRegistered": true,
+          "activeHotkey": "Ctrl+Alt+N",
+          "displayState": "ON",
+          "orbVisible": true,
+          "orbState": "LISTENING"
+        }
+      }
+    },
+    {
+      "test": "ACTIVATION_COOLDOWN_SUPPRESSION",
+      "passed": true,
+      "detail": "Secondary trigger within cooldown window was successfully suppressed (triggered: false)."
+    },
+    {
+      "test": "VAD_ENERGY_THRESHOLD_GATING",
+      "passed": true,
+      "detail": "VAD configured with RMS threshold 0.035 on 16kHz stream."
+    },
+    {
+      "test": "SELF_TRIGGER_PREVENTION",
+      "passed": true,
+      "detail": "Wake detection gated off while assistant is in SPEAKING state to prevent speaker feedback."
+    },
+    {
+      "test": "PRIVACY_MUTE_WAKE_BLOCK",
+      "passed": true,
+      "detail": "When microphone is muted, wake phrase engine is completely disarmed."
+    },
+    {
+      "test": "SESSION_LOCK_WAKE_DISARM",
+      "passed": true,
+      "detail": "Workstation lock disarmed wake detection; screen wake alone did not grant activation permissions."
+    },
+    {
+      "test": "HOTKEY_ACTIVATION_FALLBACK",
+      "passed": true,
+      "detail": "Registered fallback hotkey: Ctrl+Alt+N"
+    },
+    {
+      "test": "WAKE_ENGINE_CLEAN_SHUTDOWN",
+      "passed": true,
+      "detail": "Wake engine released speech recognizer and audio pipe stream."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "timestamp": "2026-10-23T14:26:18.148Z",
+  "binaryPath": "C:\\MSC\\my-desk\\ai-personal-assistants\\apps\\desktop-companion\\bin\\NexusDesktopCompanion.exe",
+  "binaryExists": true,
+  "tests": [
+    {
+      "testId": "TEST-LIFE-01-INITIAL-ALIVE",
+      "description": "Companion executable launches and creates active Win32 process",
+      "passed": true,
+      "pid": 12268
+    },
+    {
+      "testId": "TEST-LIFE-02-IPC-STATUS",
+      "description": "Loopback IPC /status endpoint responds with valid service schema",
+      "passed": true,
+      "response": {
+        "status": "ok",
+        "service": "nexus-desktop-companion",
+        "sessionState": "UNLOCKED",
+        "isMuted": false,
+        "startupEnabled": false,
+        "hotkeyRegistered": true,
+        "activeHotkey": "Ctrl+Alt+N",
+        "displayState": "ON",
+        "orbVisible": false,
+        "orbState": "IDLE"
+      }
+    },
+    {
+      "testId": "TEST-LIFE-03-SINGLE-INSTANCE-MUTEX",
+      "description": "2nd instance detects active mutex, queries status via CLI and exits cleanly",
+      "passed": true,
+      "exitCode": 0
+    },
+    {
+      "testId": "TEST-AUDIO-04-HARDWARE-DEVICES",
+      "description": "Native winmm.dll enumerates available audio input and output devices",
+      "passed": true,
+      "devices": [
+        {
+          "id": 0,
+          "name": "Microphone Array (Intel® Smart ",
+          "isDefault": true
+        },
+        {
+          "id": 1,
+          "name": "Microphone (OMEN Cam & Voice)",
+          "isDefault": false
+        }
+      ]
+    },
+    {
+      "testId": "TEST-VOICE-05-STOP-PAUSE",
+      "description": "Voice command 'NEXUS, stop' immediately halts speech playback in < 50ms",
+      "passed": true,
+      "latencyMs": 11.26
+    },
+    {
+      "testId": "TEST-VOICE-06-MUTE-UNMUTE-PRIVACY",
+      "description": "Voice mute completely disarms audio capture; explicit physical control restores it",
+      "passed": true,
+      "muteVerified": true,
+      "privacyZeroed": true,
+      "unmuteVerified": true
+    },
+    {
+      "testId": "TEST-WAKE-07-ACOUSTIC-DISCRIMINATION",
+      "description": "Wake engine uses phonetic grammar classifier, not raw RMS energy alone",
+      "passed": true,
+      "wakeTriggered": true,
+      "unrelatedRejected": true
+    },
+    {
+      "testId": "TEST-SEC-08-SESSION-BOUNDARIES",
+      "description": "Workstation lock disarms capture; screen wake alone never grants tool permissions; fail-closed L1-L3 verified",
+      "passed": true,
+      "lockDisarmed": true,
+      "lockedToolDenied": true,
+      "screenWakeIsolated": true,
+      "unlockRestored": true
+    },
+    {
+      "testId": "TEST-LIFE-09-60SEC-SOAK",
+      "description": "Companion process remains continuously alive and healthy for at least 60 seconds",
+      "passed": true,
+      "elapsedSec": 68,
+      "samples": [
+        {
+          "elapsedSec": 16,
+          "alive": true,
+          "stats": "{\"Id\":12268,\"WS\":92766208,\"CPU\":0.5625}"
+        },
+        {
+          "elapsedSec": 27,
+          "alive": true,
+          "stats": "{\"Id\":12268,\"WS\":92782592,\"CPU\":0.640625}"
+        },
+        {
+          "elapsedSec": 37,
+          "alive": true,
+          "stats": "{\"Id\":12268,\"WS\":92794880,\"CPU\":0.65625}"
+        },
+        {
+          "elapsedSec": 47,
+          "alive": true,
+          "stats": "{\"Id\":12268,\"WS\":92811264,\"CPU\":0.6875}"
+        },
+        {
+          "elapsedSec": 58,
+          "alive": true,
+          "stats": "{\"Id\":12268,\"WS\":93196288,\"CPU\":0.71875}"
+        },
+        {
+          "elapsedSec": 68,
+          "alive": true,
+          "stats": "{\"Id\":12268,\"WS\":93540352,\"CPU\":0.75}"
+        }
+      ]
+    }
+  ],
+  "overallVerdict": "PASS",
+  "binarySha256": "BEECE541E498B67B7A68932B136580A58387E17484CB1E2780F838B90F34E696",
+  "totalTests": 9,
+  "passedTests": 9,
+  "failedTests": 0
+}

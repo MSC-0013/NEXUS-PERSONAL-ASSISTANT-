@@ -1,0 +1,24 @@
+{
+  "bundleVersion": "2.3.0",
+  "createdUtc": "2026-10-22T05:59:45.662Z",
+  "barrierSequence": 10,
+  "barrierHash": "1d32c50dc28d5c79c8b6c2fba962f9063c49a41673d91d3e0c297e84e6073086",
+  "files": {
+    "anchor_chain.jsonl": {
+      "sizeBytes": 3113,
+      "sha256": "8be96811b9d31705050c9d54218902d71e2a0de7fa9a56e39cb0143aa3b8c5ad"
+    },
+    "Modelfile": {
+      "sizeBytes": 409,
+      "sha256": "e6d9bcb01267543ae7368c186366935a39ae24c20f7ecc1d6fd6fe28878d9845"
+    },
+    "nexus.sqlite": {
+      "sizeBytes": 200704,
+      "sha256": "fc085467fa8b49c8f4be773c27b848ddeae4bc453032933bfe96e72bc4ba2f48"
+    },
+    "NOTICE.md": {
+      "sizeBytes": 1434,
+      "sha256": "1a46114f80b294b819327f869a1c521256a3a3db2483646f183c7cd080d80951"
+    }
+  }
+}

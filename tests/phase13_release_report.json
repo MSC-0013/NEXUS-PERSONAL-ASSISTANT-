@@ -1,0 +1,27 @@
+{
+  "releaseVersion": "2.3.0",
+  "releaseTimestamp": "2026-10-22T05:59:45.706Z",
+  "status": "RELEASE_APPROVED",
+  "penetrationTests": {
+    "total": 75,
+    "passed": 75,
+    "rate": "100.0%"
+  },
+  "quiescentBackup": {
+    "barrierSequence": 10,
+    "barrierHash": "1d32c50dc28d5c79c8b6c2fba962f9063c49a41673d91d3e0c297e84e6073086",
+    "stagedArtifactsCount": 4
+  },
+  "restorationVerification": {
+    "integrityCheck": "ok",
+    "foreignKeyViolations": 0,
+    "fts5RebuildSuccess": true,
+    "auditChainValid": true,
+    "auditRecordsCount": 10
+  },
+  "offlineSovereignty": {
+    "cloudDependencies": 0,
+    "localInferenceModel": "nexus:latest",
+    "storageType": "local-first-sqlite-wal"
+  }
+}

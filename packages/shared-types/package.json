@@ -1,0 +1,16 @@
+{
+  "name": "@nexus/shared-types",
+  "version": "1.0.0",
+  "description": "Project NEXUS Common DTOs, Audit Schemas, and Lease Types",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@nexus/contracts": "*"
+  },
+  "keywords": ["nexus", "shared-types"],
+  "author": "NEXUS Engineering",
+  "license": "Apache-2.0"
+}

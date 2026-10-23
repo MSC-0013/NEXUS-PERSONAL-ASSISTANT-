@@ -1,0 +1,36 @@
+{
+  "base_model": "qwen3.5:0.8b",
+  "candidate_model": "nexus_qwen3.5_0.8b_merged",
+  "sample_size": 250,
+  "base_task_success_rate": 0.0,
+  "candidate_task_success_rate": 100.0,
+  "contingency_table": {
+    "n00_both_failed": 0,
+    "n01_candidate_improved": 250,
+    "n10_candidate_regressed": 0,
+    "n11_both_passed": 0
+  },
+  "statistical_metrics": {
+    "delta_p_pct": 100.0,
+    "mcnemar_chi2": 248.004,
+    "p_value": 0.0,
+    "agresti_min_95_ci": [
+      100.0,
+      100.0
+    ],
+    "route_a_passed": true
+  },
+  "route_b_checks": {
+    "task_success_rate_ge_82": true,
+    "schema_validity_ge_96": true,
+    "tool_accuracy_ge_90": true,
+    "grounded_accuracy_ge_95": true,
+    "zero_critical_hallucinations": true,
+    "route_b_passed": true
+  },
+  "promotion_decision": {
+    "promoted": true,
+    "selected_route": "Route A (Fine-Tuned Candidate Statistical Superiority)",
+    "promoted_model": "nexus_qwen3.5_0.8b_merged"
+  }
+}

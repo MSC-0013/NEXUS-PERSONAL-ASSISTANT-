@@ -1,0 +1,20 @@
+{
+  "name": "@nexus/desktop-companion",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Native Windows Background Companion, Session Sentinel & System Tray for Project NEXUS",
+  "scripts": {
+    "build": "powershell -ExecutionPolicy Bypass -File ./build.ps1",
+    "start": "bin\\NexusDesktopCompanion.exe --background"
+  },
+  "keywords": [
+    "nexus",
+    "desktop-companion",
+    "win32",
+    "system-tray",
+    "wts",
+    "session-sentinel"
+  ],
+  "author": "NEXUS Engineering",
+  "license": "Apache-2.0"
+}

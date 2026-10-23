@@ -1,0 +1,32 @@
+{
+  "phase": 7,
+  "timestamp": "2026-10-23T09:42:33.312Z",
+  "status": "PASS",
+  "results": [
+    {
+      "assertion": "FTS5 Insert Trigger",
+      "passed": true,
+      "hits": 2
+    },
+    {
+      "assertion": "FTS5 Update Trigger",
+      "passed": true,
+      "hits": 1
+    },
+    {
+      "assertion": "FTS5 Delete Trigger",
+      "passed": true,
+      "hits": 0
+    },
+    {
+      "assertion": "Cascade Deletion",
+      "passed": true,
+      "remainingChunks": 0
+    },
+    {
+      "assertion": "Disk Zeroing (secure_delete)",
+      "passed": true,
+      "foundOnDisk": false
+    }
+  ]
+}

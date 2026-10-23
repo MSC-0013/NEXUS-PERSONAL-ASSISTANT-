@@ -1,0 +1,13 @@
+{
+  "name": "@nexus/contracts",
+  "version": "1.0.0",
+  "description": "Project NEXUS Canonical JSON Schema & TypeScript Tool Contracts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": ["nexus", "contracts", "schema"],
+  "author": "NEXUS Engineering",
+  "license": "Apache-2.0"
+}

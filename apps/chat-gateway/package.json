@@ -1,0 +1,26 @@
+{
+  "name": "@nexus/chat-gateway",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Fastify API Gateway with SSE Streaming & Model Allowlist for Project NEXUS",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "tsx watch src/server.ts"
+  },
+  "dependencies": {
+    "@fastify/cors": "^10.0.1",
+    "@fastify/sensible": "^6.0.1",
+    "@nexus/contracts": "*",
+    "@nexus/shared-types": "*",
+    "fastify": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  },
+  "keywords": ["nexus", "gateway", "fastify", "sse"],
+  "author": "NEXUS Engineering",
+  "license": "Apache-2.0"
+}

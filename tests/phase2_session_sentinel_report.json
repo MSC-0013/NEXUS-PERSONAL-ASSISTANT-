@@ -1,0 +1,58 @@
+{
+  "timestamp": "2026-10-23T14:43:40.454Z",
+  "phase": "Phase 2 — Windows Session Sentinel",
+  "totalTests": 9,
+  "passedTests": 9,
+  "allPassed": true,
+  "results": [
+    {
+      "test": "SENTINEL_DEFAULT_FAIL_CLOSED",
+      "passed": true,
+      "detail": "Provider defaults to UNKNOWN. Protected tools denied by default."
+    },
+    {
+      "test": "SENTINEL_HEARTBEAT_ACTIVE",
+      "passed": true,
+      "detail": "Active heartbeat transitions sentinel to UNLOCKED and permits execution."
+    },
+    {
+      "test": "SENTINEL_DEADMAN_TIMEOUT_FAIL_CLOSED",
+      "passed": true,
+      "detail": "Heartbeat expired after 2314ms (TTL 2000ms). State safely reverted to UNKNOWN."
+    },
+    {
+      "test": "GATEWAY_COMPANION_HEARTBEAT_SYNC",
+      "passed": true,
+      "detail": {
+        "gatewayState": "UNLOCKED",
+        "companionState": "UNLOCKED",
+        "heartbeatAgeMs": 574
+      }
+    },
+    {
+      "test": "WTS_SESSION_LOCK_GATEWAY_SYNC",
+      "passed": true,
+      "detail": "Lock event immediately set sessionState to LOCKED across companion and gateway, and hid the orb."
+    },
+    {
+      "test": "LOCKED_SESSION_TOOL_PROHIBITION",
+      "passed": true,
+      "detail": "I cannot read README.md because access was denied by security policy (SESSION_LOCKED)."
+    },
+    {
+      "test": "SCREEN_WAKE_ISOLATION_INVARIANT",
+      "passed": true,
+      "detail": "Screen wake turned display to ON, but sessionState remained LOCKED on both companion and gateway."
+    },
+    {
+      "test": "WTS_SESSION_UNLOCK_RESTORATION",
+      "passed": true,
+      "detail": "Session unlock event successfully restored UNLOCKED state across companion and gateway."
+    },
+    {
+      "test": "SENTINEL_CLEAN_SHUTDOWN",
+      "passed": true,
+      "detail": "Companion process exited cleanly."
+    }
+  ]
+}

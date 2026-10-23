@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-10-23T14:42:34.997Z",
+  "phase": "Phase 9 — Complete End-to-End Voice Loop",
+  "binary": "C:\\MSC\\my-desk\\ai-personal-assistants\\apps\\desktop-companion\\bin\\NexusDesktopCompanion.exe",
+  "totalTests": 7,
+  "passedTests": 5,
+  "allPassed": false,
+  "results": [
+    {
+      "test": "E2E_HOTKEY_TO_SPOKEN_RESPONSE",
+      "passed": false,
+      "detail": {
+        "hotkeyOrbState": "LISTENING",
+        "responseContent": "The current time in UTC is 2026-10-23 14:42:18 (UTC). UTC time is 2026-10-23 14:42:18 (UTC). The difference between UTC and Asia/Kolkata is exactly 5 hours and 30 minutes (+05:30).",
+        "duringSpeechOrb": "SPEAKING",
+        "duringSpeechTts": true,
+        "finalOrbState": "SPEAKING"
+      }
+    },
+    {
+      "test": "E2E_WAKE_PHRASE_CALCULATION",
+      "passed": false,
+      "detail": {
+        "wakeTriggered": false,
+        "responseContent": "25 times 40 equals 1,000.",
+        "finalOrbState": "IDLE"
+      }
+    },
+    {
+      "test": "E2E_UNLOCKED_WORKSPACE_READ",
+      "passed": true,
+      "detail": "The README.md file contains project documentation for Project NEXUS V2.3."
+    },
+    {
+      "test": "E2E_LOCKED_SESSION_FAIL_CLOSED",
+      "passed": true,
+      "detail": {
+        "response": "I cannot perform that operation because access was denied by security policy: workstation is locked.",
+        "sessionState": "LOCKED"
+      }
+    },
+    {
+      "test": "E2E_LIVE_BARGE_IN_CANCELLATION",
+      "passed": true,
+      "detail": {
+        "beforeSpeaking": true,
+        "afterSpeaking": false,
+        "bargeInCount": 5,
+        "orbState": "LISTENING"
+      }
+    },
+    {
+      "test": "E2E_PRIVACY_MUTE_ISOLATION",
+      "passed": true,
+      "detail": {
+        "isMuted": true,
+        "wakeAttemptTriggered": false,
+        "orbState": "IDLE"
+      }
+    },
+    {
+      "test": "E2E_CLEAN_PIPELINE_SHUTDOWN",
+      "passed": true,
+      "detail": "Audio, TTS, STT, Sentinel, IPC, and Gateway connections cleanly released."
+    }
+  ]
+}

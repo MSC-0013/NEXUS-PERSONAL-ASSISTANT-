@@ -1,0 +1,82 @@
+{
+  "timestamp": "2026-10-23T14:43:55.602Z",
+  "phase": "Phase 5 — Real Local Speech-to-Text",
+  "binary": "C:\\MSC\\my-desk\\ai-personal-assistants\\apps\\desktop-companion\\bin\\NexusDesktopCompanion.exe",
+  "totalTests": 7,
+  "passedTests": 7,
+  "allPassed": true,
+  "results": [
+    {
+      "test": "STT_ENGINE_INITIALIZATION",
+      "passed": true,
+      "detail": {
+        "isReady": true,
+        "engine": "windows-offline-sapi-dictation",
+        "sampleRate": 16000,
+        "isRecording": false,
+        "isBusy": false
+      }
+    },
+    {
+      "test": "REAL_SPEECH_MULTI_SENTENCE_ACCURACY",
+      "passed": true,
+      "detail": [
+        {
+          "input": "what time is it",
+          "transcribed": "what time is it",
+          "confidence": 0.89,
+          "latencyMs": 149,
+          "matched": true
+        },
+        {
+          "input": "calculate twenty five times four",
+          "transcribed": "calculate twenty five times four",
+          "confidence": 0.923,
+          "latencyMs": 63,
+          "matched": true
+        },
+        {
+          "input": "read the file README",
+          "transcribed": "read the file readme",
+          "confidence": 0.931,
+          "latencyMs": 68,
+          "matched": true
+        }
+      ]
+    },
+    {
+      "test": "MALFORMED_AUDIO_AND_SILENCE_REJECTION",
+      "passed": true,
+      "detail": {
+        "emptyRejected": true,
+        "oddBytesRejected": true,
+        "silenceRejected": true
+      }
+    },
+    {
+      "test": "END_OF_UTTERANCE_DETECTION",
+      "passed": true,
+      "detail": "Trailing silence after voice activity automatically completed utterance framing."
+    },
+    {
+      "test": "STT_CANCELLATION_RECOVERY",
+      "passed": true,
+      "detail": "Cancellation request successfully aborted active utterance and restored idle state."
+    },
+    {
+      "test": "VOICE_BRIDGE_DAEMON_INTEGRATION",
+      "passed": true,
+      "detail": {
+        "text": "what time is it",
+        "confidence": 0.888,
+        "durationMs": 73,
+        "error": null
+      }
+    },
+    {
+      "test": "STT_CLEAN_SHUTDOWN",
+      "passed": true,
+      "detail": "STT engine released speech recognizer handles and cleanly shut down."
+    }
+  ]
+}

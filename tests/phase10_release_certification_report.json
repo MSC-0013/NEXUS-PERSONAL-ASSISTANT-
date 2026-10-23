@@ -1,0 +1,61 @@
+{
+  "timestamp": "2026-10-23T14:42:38.024Z",
+  "phase": "Phase 10 — Hardening, Packaging & Release Certification",
+  "binary": "C:\\MSC\\my-desk\\ai-personal-assistants\\apps\\desktop-companion\\bin\\NexusDesktopCompanion.exe",
+  "totalTests": 6,
+  "passedTests": 6,
+  "allPassed": true,
+  "results": [
+    {
+      "test": "RELEASE_BINARY_INTEGRITY",
+      "passed": true,
+      "detail": {
+        "binaryPath": "C:\\MSC\\my-desk\\ai-personal-assistants\\apps\\desktop-companion\\bin\\NexusDesktopCompanion.exe",
+        "sizeBytes": 78336,
+        "sha256": "17C5E2EE1DC71D261002819CE85CE1D6A240DE9206F2ED05A352D08DFDCB8950"
+      }
+    },
+    {
+      "test": "MUTEX_SINGLE_INSTANCE_ENFORCEMENT",
+      "passed": true,
+      "detail": {
+        "secondInstanceExitCode": 0,
+        "output": "NexusDesktopCompanion is already running in background."
+      }
+    },
+    {
+      "test": "CLI_DIAGNOSTIC_COMMANDS",
+      "passed": true,
+      "detail": {
+        "statusCli": "{\"status\":\"ok\",\"service\":\"nexus-desktop-companion\",\"sessionState\":\"UNLOCKED\",\"isMuted\":false,\"startupEnabled\":false,\"hotkeyRegistered\":true,\"activeHotkey\":\"Ctrl+Alt+N\",\"displayState\":\"ON\",\"orbVisible\":false,\"orbState\":\"IDLE\"}",
+        "muteCli": "{\"isMuted\":true}",
+        "orbShowCli": "{\"orbVisible\":true,\"orbState\":\"LISTENING\"}",
+        "orbHideCli": "{\"orbVisible\":false,\"orbState\":\"IDLE\"}"
+      }
+    },
+    {
+      "test": "STARTUP_REGISTRY_RESILIENCE",
+      "passed": true,
+      "detail": {
+        "toggle1": "{\"startupEnabled\":true}",
+        "toggle2": "{\"startupEnabled\":false}"
+      }
+    },
+    {
+      "test": "MEMORY_THREAD_STABILITY",
+      "passed": true,
+      "detail": {
+        "serviceOnline": true,
+        "dispatchesCompleted": 5
+      }
+    },
+    {
+      "test": "GRACEFUL_TEARDOWN_AND_MUTEX_RELEASE",
+      "passed": true,
+      "detail": {
+        "exitOutput": "{\"status\":\"exiting\"}",
+        "processTerminated": true
+      }
+    }
+  ]
+}

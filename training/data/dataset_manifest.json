@@ -1,0 +1,24 @@
+{
+  "partitions": {
+    "train.jsonl": {
+      "record_count": 600,
+      "sha256": "38e9138f75a122a1200e6f407ab90ca56437391ae866f2205d96e3f2aa39dcec",
+      "path": "C:\\MSC\\my-desk\\ai-personal-assistants\\training\\data\\train.jsonl"
+    },
+    "validation.jsonl": {
+      "record_count": 120,
+      "sha256": "1d24e5becef849addf6aae58dce488d07f942c3a95d477efc6d9bba2485343b8",
+      "path": "C:\\MSC\\my-desk\\ai-personal-assistants\\training\\data\\validation.jsonl"
+    },
+    "dev_benchmark.jsonl": {
+      "record_count": 300,
+      "sha256": "f3430f5e7ae415a5b232a8a46072759330d75856d8614a614277d92e28802706",
+      "path": "C:\\MSC\\my-desk\\ai-personal-assistants\\training\\data\\dev_benchmark.jsonl"
+    },
+    "sealed_eval_v2.jsonl": {
+      "record_count": 252,
+      "sha256": "b2568831ea71b101a442f838955eb606c15fad70b1c20083303de68c335a6b58",
+      "path": "C:\\MSC\\my-desk\\ai-personal-assistants\\training\\data\\sealed_eval_v2.jsonl"
+    }
+  }
+}

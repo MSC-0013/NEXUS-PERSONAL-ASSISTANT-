@@ -1,0 +1,61 @@
+{
+  "testSuite": "NEXUS_GATEWAY_SECURITY_POLICY_TESTS",
+  "timestamp": "2026-10-23T14:43:30.009Z",
+  "status": "PASS",
+  "allPassed": true,
+  "results": [
+    {
+      "test": "Default Fail-Closed State",
+      "passed": true,
+      "state": "UNKNOWN"
+    },
+    {
+      "test": "Unknown Session State Gating",
+      "passed": true
+    },
+    {
+      "test": "Locked Session Gating",
+      "passed": true
+    },
+    {
+      "test": "Unlocked Permissions & Approvals",
+      "passed": true
+    },
+    {
+      "test": "Unregistered Tools Rejection",
+      "passed": true
+    },
+    {
+      "test": "Argument Schema Rejection",
+      "passed": true
+    },
+    {
+      "test": "Pre-Execution Path Traversal Defense",
+      "passed": true
+    },
+    {
+      "test": "Provider Failure Fail-Closed",
+      "passed": true
+    },
+    {
+      "test": "Regex Intent Blocked in UNKNOWN State",
+      "passed": true
+    },
+    {
+      "test": "Model-Generated Protected Tool Call Blocked in UNKNOWN",
+      "passed": true
+    },
+    {
+      "test": "Streaming Disarmed When LOCKED",
+      "passed": true
+    },
+    {
+      "test": "Streaming Equivalent Policy Enforcement",
+      "passed": true
+    },
+    {
+      "test": "Ordinary Conversational Responses Allowed",
+      "passed": true
+    }
+  ]
+}

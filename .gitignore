@@ -1,0 +1,82 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build and Distribution outputs
+dist/
+build/
+out/
+.next/
+*.tsbuildinfo
+
+# Python cache & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing & Coverage
+coverage/
+*.lcov
+.nyc_output
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Heavy AI model weights & merged base models (>50MB)
+*.gguf
+*.bin
+*.pt
+*.pth
+**/model.safetensors
+training/checkpoints/nexus_qwen3.5_0.8b_merged/model.safetensors
+
+# Database runtime lock & journal files
+*.sqlite-wal
+*.sqlite-shm
+*.db-wal
+*.db-shm
+*.sqlite-journal
+
+# Temporary backups & test dumps
+*.bak
+*.tombstone
+last_user_prompt.txt
+current_request_raw.txt
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local environment & secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editor settings
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

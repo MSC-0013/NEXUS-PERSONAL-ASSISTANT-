@@ -1,0 +1,21 @@
+{
+  "name": "@nexus/voice-bridge",
+  "version": "1.0.0",
+  "description": "Local Offline Voice (Whisper STT & Piper TTS) Daemon for Project NEXUS",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@nexus/contracts": "*",
+    "@nexus/shared-types": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  },
+  "keywords": ["nexus", "voice", "whisper", "piper", "offline"],
+  "author": "NEXUS Engineering",
+  "license": "Apache-2.0"
+}

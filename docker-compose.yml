@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: nexus-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: unless-stopped
+
+  chat-gateway:
+    build:
+      context: .
+      dockerfile: apps/chat-gateway/Dockerfile
+    container_name: nexus-chat-gateway
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - OLLAMA_HOST=http://ollama:11434
+      - NODE_ENV=production
+    depends_on:
+      - ollama
+    restart: unless-stopped
+
+volumes:
+  ollama-data:

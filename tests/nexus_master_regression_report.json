@@ -1,0 +1,120 @@
+{
+  "timestamp": "2026-10-23T14:42:38.036Z",
+  "verdict": "FAILURES_DETECTED",
+  "totalPhases": 11,
+  "totalTests": 79,
+  "passedTests": 77,
+  "allPassed": false,
+  "suites": [
+    {
+      "phase": 0,
+      "name": "Gateway Security Policy",
+      "script": "test_gateway_security_policy.mjs",
+      "passed": true,
+      "testsPassed": 1,
+      "testsTotal": 1,
+      "durationMs": 1059,
+      "exitCode": 0
+    },
+    {
+      "phase": 1,
+      "name": "Native Desktop Companion",
+      "script": "test_desktop_companion_phase1.mjs",
+      "passed": true,
+      "testsPassed": 11,
+      "testsTotal": 11,
+      "durationMs": 2859,
+      "exitCode": 0
+    },
+    {
+      "phase": 2,
+      "name": "Session Sentinel & Heartbeat",
+      "script": "test_session_sentinel_phase2.mjs",
+      "passed": true,
+      "testsPassed": 9,
+      "testsTotal": 9,
+      "durationMs": 7959,
+      "exitCode": 0
+    },
+    {
+      "phase": 3,
+      "name": "Native Audio Subsystem",
+      "script": "test_native_audio_phase3.mjs",
+      "passed": true,
+      "testsPassed": 8,
+      "testsTotal": 8,
+      "durationMs": 2336,
+      "exitCode": 0
+    },
+    {
+      "phase": 4,
+      "name": "Local Wake-Phrase Engine",
+      "script": "test_wake_phrase_phase4.mjs",
+      "passed": true,
+      "testsPassed": 9,
+      "testsTotal": 9,
+      "durationMs": 6951,
+      "exitCode": 0
+    },
+    {
+      "phase": 5,
+      "name": "Local Speech-to-Text & EOU",
+      "script": "test_speech_to_text_phase5.mjs",
+      "passed": true,
+      "testsPassed": 7,
+      "testsTotal": 7,
+      "durationMs": 5954,
+      "exitCode": 0
+    },
+    {
+      "phase": 6,
+      "name": "Voice-to-Gateway Pipeline",
+      "script": "test_voice_gateway_phase6.mjs",
+      "passed": true,
+      "testsPassed": 7,
+      "testsTotal": 7,
+      "durationMs": 5213,
+      "exitCode": 0
+    },
+    {
+      "phase": 7,
+      "name": "Production-Quality Floating Orb",
+      "script": "test_floating_orb_phase7.mjs",
+      "passed": true,
+      "testsPassed": 7,
+      "testsTotal": 7,
+      "durationMs": 2713,
+      "exitCode": 0
+    },
+    {
+      "phase": 8,
+      "name": "Local Text-to-Speech & Barge-In",
+      "script": "test_text_to_speech_phase8.mjs",
+      "passed": true,
+      "testsPassed": 7,
+      "testsTotal": 7,
+      "durationMs": 4844,
+      "exitCode": 0
+    },
+    {
+      "phase": 9,
+      "name": "Complete End-to-End Voice Loop",
+      "script": "test_end_to_end_voice_phase9.mjs",
+      "passed": false,
+      "testsPassed": 5,
+      "testsTotal": 7,
+      "durationMs": 19313,
+      "exitCode": 1
+    },
+    {
+      "phase": 10,
+      "name": "Hardening & Release Certification",
+      "script": "test_hardening_release_phase10.mjs",
+      "passed": true,
+      "testsPassed": 6,
+      "testsTotal": 6,
+      "durationMs": 3025,
+      "exitCode": 0
+    }
+  ]
+}

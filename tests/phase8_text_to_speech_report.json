@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-10-23T14:44:09.215Z",
+  "phase": "Phase 8 — Local Text-to-Speech & Barge-in",
+  "binary": "C:\\MSC\\my-desk\\ai-personal-assistants\\apps\\desktop-companion\\bin\\NexusDesktopCompanion.exe",
+  "totalTests": 7,
+  "passedTests": 7,
+  "allPassed": true,
+  "results": [
+    {
+      "test": "TTS_VOICE_ENUMERATION",
+      "passed": true,
+      "detail": {
+        "currentVoice": "Microsoft Zira Desktop",
+        "installedVoices": [
+          "Microsoft David Desktop",
+          "Microsoft Zira Desktop"
+        ]
+      }
+    },
+    {
+      "test": "TTS_OFFLINE_SYNTHESIS",
+      "passed": true,
+      "detail": {
+        "success": true,
+        "bytes": 248266,
+        "voice": "Microsoft Zira Desktop"
+      }
+    },
+    {
+      "test": "TTS_SPEECH_PLAYBACK_AND_ORB_SYNC",
+      "passed": true,
+      "detail": {
+        "duringSpeechOrb": "SPEAKING",
+        "duringSpeechTts": true,
+        "afterSpeechOrb": "IDLE",
+        "afterSpeechTts": false
+      }
+    },
+    {
+      "test": "TTS_BARGE_IN_INSTANT_CUTOFF",
+      "passed": true,
+      "detail": {
+        "stopped": true,
+        "latencyMs": 26.48,
+        "bargeInCount": 1,
+        "orbState": "INTERRUPTED"
+      }
+    },
+    {
+      "test": "TTS_ACTIVATION_PREEMPTION",
+      "passed": true,
+      "detail": {
+        "isSpeaking": false,
+        "orbState": "LISTENING"
+      }
+    },
+    {
+      "test": "TTS_SELF_TRIGGER_SUPPRESSION",
+      "passed": true,
+      "detail": {
+        "isSelfTriggerSuppressed": true
+      }
+    },
+    {
+      "test": "TTS_CLEAN_SHUTDOWN",
+      "passed": true,
+      "detail": "SAPI synthesizer released and message loop terminated cleanly."
+    }
+  ]
+}

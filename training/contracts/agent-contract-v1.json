@@ -1,0 +1,175 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NexusTurnResponse",
+  "description": "Canonical single-turn response format for Project NEXUS",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "type": "string", "enum": ["final"] },
+        "content": { "type": "string", "minLength": 1, "maxLength": 16384 }
+      },
+      "required": ["kind", "content"]
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "type": "string", "enum": ["tool_call"] },
+        "name": { "type": "string", "enum": ["get_current_time"] },
+        "arguments": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "timezone": {
+              "type": "string",
+              "maxLength": 64,
+              "description": "Optional IANA timezone identifier, e.g. 'UTC' or 'Asia/Kolkata'."
+            }
+          }
+        }
+      },
+      "required": ["kind", "name", "arguments"]
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "type": "string", "enum": ["tool_call"] },
+        "name": { "type": "string", "enum": ["calculate"] },
+        "arguments": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "expression": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "description": "Arithmetic expression to evaluate safely (+, -, *, /, %, ^, parentheses)"
+            }
+          },
+          "required": ["expression"]
+        }
+      },
+      "required": ["kind", "name", "arguments"]
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "type": "string", "enum": ["tool_call"] },
+        "name": { "type": "string", "enum": ["search_knowledge"] },
+        "arguments": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "query": { "type": "string", "minLength": 1, "maxLength": 512 },
+            "limit": { "type": "integer", "minimum": 1, "maximum": 20, "default": 5 }
+          },
+          "required": ["query"]
+        }
+      },
+      "required": ["kind", "name", "arguments"]
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "type": "string", "enum": ["tool_call"] },
+        "name": { "type": "string", "enum": ["read_workspace_file"] },
+        "arguments": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relative_path": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512,
+              "description": "Relative path to file inside workspace."
+            }
+          },
+          "required": ["relative_path"]
+        }
+      },
+      "required": ["kind", "name", "arguments"]
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "type": "string", "enum": ["tool_call"] },
+        "name": { "type": "string", "enum": ["create_task"] },
+        "arguments": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "goal": { "type": "string", "minLength": 1, "maxLength": 1024 }
+          },
+          "required": ["goal"]
+        }
+      },
+      "required": ["kind", "name", "arguments"]
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "type": "string", "enum": ["tool_call"] },
+        "name": { "type": "string", "enum": ["propose_workspace_write"] },
+        "arguments": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relative_path": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512,
+              "description": "Target relative file path inside workspace"
+            },
+            "proposed_content": {
+              "type": "string",
+              "maxLength": 4096,
+              "description": "Proposed complete file content"
+            }
+          },
+          "required": ["relative_path", "proposed_content"]
+        }
+      },
+      "required": ["kind", "name", "arguments"]
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "type": "string", "enum": ["tool_call"] },
+        "name": { "type": "string", "enum": ["propose_workspace_patch"] },
+        "arguments": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relative_path": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512,
+              "description": "Target relative file path inside workspace"
+            },
+            "target_snippet": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1024,
+              "description": "Verbatim text snippet in existing file to be replaced"
+            },
+            "replacement_snippet": {
+              "type": "string",
+              "maxLength": 2048,
+              "description": "New replacement code snippet"
+            }
+          },
+          "required": ["relative_path", "target_snippet", "replacement_snippet"]
+        }
+      },
+      "required": ["kind", "name", "arguments"]
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "timestamp": "2026-10-23T14:43:32.514Z",
+  "phase": "Phase 1 — Native Windows Desktop Companion",
+  "binary": "C:\\MSC\\my-desk\\ai-personal-assistants\\apps\\desktop-companion\\bin\\NexusDesktopCompanion.exe",
+  "totalTests": 11,
+  "passedTests": 11,
+  "allPassed": true,
+  "results": [
+    {
+      "test": "COMPANION_BACKGROUND_LAUNCH",
+      "passed": true,
+      "detail": "Native desktop companion started in background mode with loopback IPC operational."
+    },
+    {
+      "test": "SINGLE_INSTANCE_MUTEX",
+      "passed": true,
+      "detail": "NexusDesktopCompanion is already running in background."
+    },
+    {
+      "test": "STATUS_QUERY_AND_HOTKEY",
+      "passed": true,
+      "detail": {
+        "sessionState": "UNLOCKED",
+        "activeHotkey": "Ctrl+Alt+N",
+        "hotkeyRegistered": true,
+        "orbVisible": false,
+        "orbState": "IDLE"
+      }
+    },
+    {
+      "test": "PRIVACY_MUTE_TOGGLE",
+      "passed": true,
+      "detail": "Mute toggled ON then restored OFF correctly in state and context menu."
+    },
+    {
+      "test": "WINDOWS_STARTUP_TOGGLE",
+      "passed": true,
+      "detail": "Startup successfully toggled from false -> true and restored to false."
+    },
+    {
+      "test": "ORB_STATE_MACHINE",
+      "passed": true,
+      "detail": {
+        "show": {
+          "orbVisible": true,
+          "orbState": "LISTENING"
+        },
+        "processing": {
+          "orbVisible": true,
+          "orbState": "PROCESSING"
+        },
+        "speaking": {
+          "orbVisible": true,
+          "orbState": "SPEAKING"
+        },
+        "authRequired": {
+          "orbVisible": true,
+          "orbState": "AUTH_REQUIRED"
+        },
+        "error": {
+          "orbVisible": true,
+          "orbState": "ERROR"
+        },
+        "hide": {
+          "orbVisible": false,
+          "orbState": "IDLE"
+        }
+      }
+    },
+    {
+      "test": "SESSION_LOCK_ORB_DISMISSAL",
+      "passed": true,
+      "detail": "Lock event automatically disarms audio/orb and suppresses any orb activation."
+    },
+    {
+      "test": "DISPLAY_WAKE_SESSION_ISOLATION",
+      "passed": true,
+      "detail": "Screen wake alone preserved LOCKED state without granting unauthenticated access."
+    },
+    {
+      "test": "SESSION_UNLOCK_RESTORATION",
+      "passed": true,
+      "detail": "Session unlock event successfully restored UNLOCKED Standby state."
+    },
+    {
+      "test": "GATEWAY_SESSION_SYNC",
+      "passed": true,
+      "detail": {
+        "notificationsReceived": [
+          "UNLOCKED",
+          "LOCKED"
+        ]
+      }
+    },
+    {
+      "test": "GRACEFUL_SHUTDOWN",
+      "passed": true,
+      "detail": "Companion process closed HTTP listener, tray icon, message loop and exited cleanly."
+    }
+  ]
+}

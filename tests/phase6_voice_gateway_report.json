@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-10-23T14:44:00.897Z",
+  "phase": "Phase 6 — Voice-to-Gateway Integration",
+  "binary": "C:\\MSC\\my-desk\\ai-personal-assistants\\apps\\desktop-companion\\bin\\NexusDesktopCompanion.exe",
+  "totalTests": 7,
+  "passedTests": 7,
+  "allPassed": true,
+  "results": [
+    {
+      "test": "VOICE_GATEWAY_PIPELINE_FLOW",
+      "passed": true,
+      "detail": {
+        "response": "The current time in UTC is 2026-10-23 14:43:58 (UTC). UTC time is 2026-10-23 14:43:58 (UTC). The difference between UTC and Asia/Kolkata is exactly 5 hours and 30 minutes (+05:30).",
+        "orbState": "SPEAKING"
+      }
+    },
+    {
+      "test": "VOICE_CONTEXT_PRESERVATION",
+      "passed": true,
+      "detail": "The current time in UTC is 2026-10-23 14:43:58 (UTC). UTC time is 2026-10-23 14:43:58 (UTC). The difference between UTC and Asia/Kolkata is exactly 5 hours and 30 minutes (+05:30)."
+    },
+    {
+      "test": "UNLOCKED_WORKSPACE_READ_AUTHORIZED",
+      "passed": true,
+      "detail": "The README.md file contains project documentation for Project NEXUS V2.3."
+    },
+    {
+      "test": "LOCKED_WORKSPACE_READ_DENIED",
+      "passed": true,
+      "detail": {
+        "response": "I cannot perform that operation because access was denied by security policy (SESSION_LOCKED).",
+        "orbState": "IDLE",
+        "sessionState": "LOCKED"
+      }
+    },
+    {
+      "test": "VOICE_PATH_TRAVERSAL_PRE_EXECUTION_DEFENSE",
+      "passed": true,
+      "detail": "I cannot perform that operation because access was denied by security policy: Path traversal prohibited."
+    },
+    {
+      "test": "MALFORMED_VOICE_TRANSCRIPT_REJECTION",
+      "passed": true,
+      "detail": {
+        "error": "EMPTY_PROMPT",
+        "message": "Voice prompt cannot be empty."
+      }
+    },
+    {
+      "test": "VOICE_GATEWAY_CLEAN_SHUTDOWN",
+      "passed": true,
+      "detail": "Companion process closed voice dispatch loop and exited cleanly."
+    }
+  ]
+}

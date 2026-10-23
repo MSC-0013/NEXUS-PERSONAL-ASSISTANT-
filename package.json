@@ -1,0 +1,23 @@
+{
+  "name": "project-nexus",
+  "version": "2.3.0",
+  "private": true,
+  "description": "Project NEXUS V2.3 — Autonomous Sovereign Offline AI Assistant",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "keywords": [
+    "nexus",
+    "offline-ai",
+    "sovereign-agent",
+    "lora",
+    "rag"
+  ],
+  "author": "NEXUS Engineering",
+  "license": "Apache-2.0"
+}
