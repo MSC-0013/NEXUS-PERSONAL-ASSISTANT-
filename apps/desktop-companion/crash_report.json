@@ -3,7 +3,7 @@
   "component": "NexusDesktopCompanion.exe",
   "version": "2.3.0-certified",
   "binaryPath": "C:\\MSC\\my-desk\\ai-personal-assistants\\apps\\desktop-companion\\bin\\NexusDesktopCompanion.exe",
-  "sha256": "6CFBE25FF56BD218F4F19547A3643078CFE8EDC9748F773BB7D8DA3A5E0190B2",
+  "sha256": "17C5E2EE1DC71D261002819CE85CE1D6A240DE9206F2ED05A352D08DFDCB8950",
   "incidentSummary": "Diagnosis, root-cause isolation, and resolution of startup instability, process termination, file locks, and state machine collisions.",
   "rootCauses": [
     {
